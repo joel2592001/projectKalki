@@ -94,8 +94,11 @@ p{
 
 .header-main{
     width: 100%;
-    padding: var(--padding-large) 4rem; 
+    padding: var(--padding-small) 4rem; 
     background-color: var(--PRIMARY_COLOR);
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }
 
 .header-logo-container{
@@ -106,6 +109,27 @@ p{
     color: var(--DEFAULT_WHITE);
     font-size: 20px;
     font-weight: 700;
+}
+
+.header-content-container{
+    display: flex;
+    /* gap: 10px; */
+    width: 50%;
+    /* background-color: wheat; */
+    justify-content: space-between;
+}
+
+.header-content{
+    color: var(--DEFAULT_WHITE);
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+    padding: var(--padding-small) var(--padding-large);
+
+}
+
+.header-content:hover{
+    background-color: rgba(255, 255, 255, 0.259);
+    border-radius: var(--border-radius-small);
 }
 
 
