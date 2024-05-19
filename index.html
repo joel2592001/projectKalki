@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
+
 <body>
     <!-- main -->
     <div class="main-container">
         <!-- header -->
 
         <div class="header-main">
-            <div class="header-logo-container">
-                <i class="bi bi-buildings"></i>
-                <p class="header-logo">KALKII</p>
+            <div class="header-logo-main">
+                <i class="bi bi-list header-list" onclick="modalOpenClose()"></i>
+                <div class="header-logo-container">
+                    <i class="bi bi-buildings header-logo"></i>
+                    <p class="header-logo">KALKII</p>
+                </div>
             </div>
+
 
             <div class="header-content-container">
                 <p class="header-content">Home</p>
                 <p class="header-content">About</p>
                 <p class="header-content">Services</p>
-                <p class="header-content">Customer Stories</p>
                 <p class="header-content">Contact</p>
             </div>
         </div>
 
+        <!-- navigation modal -->
 
-        
+        <div class="nav-modal" id="nav-modal" onclick="modalOpenClose()">
+            <div class="nav-modal-container">
+
+                <div class="nav-modal-content">
+
+                    <div class="nav-modal-line">
+                        <i class="bi bi-buildings nav-modal-header-logo"></i>
+                        <p class="nav-modal-header-logo">KALKII</p>
+                    </div>
+
+                    <div>
+                        <span class="nav-modal-item">Home<i class="bi bi-arrow-right"></i></span>
+                        <span class="nav-modal-item">About <i class="bi bi-arrow-right"></i></span>
+                        <span class="nav-modal-item">Services <i class="bi bi-arrow-right"></i></span>
+                        <span class="nav-modal-item">Contact <i class="bi bi-arrow-right"></i></span>
+                    </div>
+
+                </div>
+                <!-- <p class="nav-modal-close">x</p> -->
+                <i class="bi bi-x nav-modal-close" id="nav-modal-close"></i>
+            </div>
+
+        </div>
+
+
+
     </div>
-    
+
+    <!-- script -->
+    <script src="index.js"></script>
 </body>
+
 </html>
