@@ -54,6 +54,7 @@
     --font-size-small: 12px;
     --font-size-medium: 16px;
     --font-size-large: 20px;
+    --font-size-xlarge: 24px;
 
     /* Line heights */
     --line-height-small: 1.2;
@@ -73,6 +74,12 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    user-select: none;
+    /* -webkit-user-select: none;   
+    -moz-user-select: none;      
+    -ms-user-select: none;   */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 * {
@@ -205,11 +212,11 @@ p {
     cursor: pointer;
     text-align: center;
     display: flex;
-  }
+}
 
-  .nav-modal-item:active{
+.nav-modal-item:active {
     background-color: var(--LIGHT_GREY);
-  }
+}
 
 .nav-modal-close {
     font-size: 25px;
@@ -219,15 +226,131 @@ p {
     font-weight: bold;
 }
 
+/* -------------------------------------------------------- */
 
+.main-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* -------------------------------------------------------- */
+
+.section-one {
+    width: 100%;
+    padding: var(--padding-large) 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-one-main {
+    width: 80%;
+    /* background-color: #000035; */
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+}
+
+.section-one-left-title{
+    font-size: var(--font-size-xlarge);
+    font-weight: bolder;
+}
+
+.section-one-left-content{
+    
+}
+
+/* -------------------------------------------------------- */
+
+.section-two{
+    background-color: #0A8791;
+    padding: var(--padding-large);
+}
+
+/* -------------------------------------------------------- */
+
+.footer-main {
+    width: 100%;
+    /* height: fit-content; */
+    background-color: var(--PRIMARY_COLOR);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--DEFAULT_WHITE);
+    padding: var(--padding-large) 0px;
+
+}
+
+.footer-content-main {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    padding: var(--padding-large) 0px;
+    color: var(--LIGHT_GREY2);
+
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+}
+
+.footer-content-main span:hover {
+    /* background-color: rgba(255, 255, 255, 0.259); */
+    color: var(--DEFAULT_WHITE);
+
+}
+
+.footer-icon-main {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    padding: var(--padding-large) 0px;
+    color: var(--DEFAULT_WHITE);
+    font-size: var(--font-size-medium);
+}
+
+.footer-icon-main span {
+    display: flex;
+    width: 3em;
+    height: 3em;
+    /* background-color: var(--DEFAULT_WHITE); */
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer-icon-main span:hover {
+    background-color: var(--DEFAULT_GREEN);
+    background-color: rgba(255, 255, 255, 0.259);
+}
+
+.footer-icon-main span i {
+    font-size: 1.5em;
+    color: var(--DEFAULT_WHITE);
+
+}
+
+.footer-copyright {
+    font-size: var(--font-size-medium);
+    padding: var(--padding-large) 0px;
+    color: var(--DEFAULT_WHITE);
+    text-align: center;
+}
 
 
 
 /* media query */
 
 @media only screen and (max-width: 768px) {
+    /* ---------------header--------------- */
     .header-main {
-        padding: var(--padding-small);
+        padding: var(--padding-small) var(--padding-medium);
     }
 
     .header-list {
@@ -238,15 +361,36 @@ p {
         display: none;
     }
 
-    .nav-modal {
-        display: block;
+    /* ---------------footer--------------- */
+    .footer-content-main {
+        width: 70%;
+    }
+
+    .footer-icon-main {
+        width: 30%;
+    }
+
+    .footer-copyright{
+        font-size: var(--font-size-small);
+        width: 80%;
     }
 
 }
 
 
 @media only screen and (max-width: 500px) {
+    /* ---------------header--------------- */
     .nav-modal-content {
         width: 100%;
+    }
+
+    /* ------------footer---------------- */
+
+    .footer-content-main {
+        width: 100%;
+    }
+
+    .footer-icon-main{
+        width: 40%;
     }
 }
