@@ -27,7 +27,7 @@ function modalOpenClose() {
 
 
 // Get the container element
-const container = document.querySelector('.section-one-left-content');
+const container = document.querySelector('.section-first-right-content-body');
 
 // Loop through the array and append each item to the container
 products.forEach(product => {
@@ -36,5 +36,32 @@ products.forEach(product => {
     container.appendChild(p);
 });
 
-  
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".section-one-right");
+  const prevButton = document.querySelector(".section-one-bottom-prev");
+  const nextButton = document.querySelector(".section-one-bottom-next");
+  const totalItems = document.querySelectorAll(".section-one-right-img-card").length;
+  let currentIndex = 0;
+
+  function updateCarousel() {
+      const transformValue = -currentIndex * 100;
+      carousel.style.transform = `translateX(${transformValue}%)`;
+  }
+
+  prevButton.addEventListener("click", function () {
+      if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+      }
+  });
+
+  nextButton.addEventListener("click", function () {
+      if (currentIndex < totalItems - 1) {
+          currentIndex++;
+          updateCarousel();
+      }
+  });
+});
+
   
