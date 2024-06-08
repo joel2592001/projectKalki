@@ -1,0 +1,192 @@
+
+            <div class="contact-form-main">
+
+                <div class="contact-form-header">
+                    <p class="section-title">HAVE ANY QUESTION?</p>
+                </div>
+
+                <div class="contact-form-wrapper">
+
+                    <div class="contact-form-left">
+
+                            <div class="contact-form-left-head-wrapper">
+                                <p>Get In Touch</p>
+                                <p>Have any query about the brand and need help?Then reach out to us
+                                    anytime and we will get back to you</p>
+                            </div>
+
+                        <div class="contact-form-left-content">
+
+                            <div class="contact-form-left-content-item-wrapper">
+                                <span class="contact-form-left-content-item" onclick="window.location.href='mailto:kalkipipesalangulam@gmail.com';">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+                                <p>kalkipipesalangulam@gmail.com</p>
+                            </div>
+                            <div class="contact-form-left-content-item-wrapper">
+                                <span class="contact-form-left-content-item" onclick="window.location.href='https://www.google.com/maps/';">
+                                    <i class="bi bi-geo-alt"></i>
+                                </span>
+                                <p>5/519,Kalki Pipes Building,Mukkudal Road,Ramnagar Alangulam Tk,Tenkasi Dt.Tamil Nadu
+                                    - 627851</p>
+                            </div>
+                            <div class="contact-form-left-content-item-wrapper">
+                                <span class="contact-form-left-content-item" onclick="window.location.href='https://wa.me/7092824762';">
+                                    <i class="bi bi-whatsapp"></i>
+                                </span>
+                                <p>+91 9384310028</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-form-right">
+                        <input class="contact-form-input" type="text" placeholder="Name">
+                        <input class="contact-form-input" type="email" placeholder="Email">
+                        <input class="contact-form-input" type="text" placeholder="Subject">
+                        <textarea class="contact-form-textarea" name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        <button class="contact-form-button">Submit</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            .contact-form-wrapper{
+                width: 95%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center
+            }
+            
+            .contact-form-left{
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px
+            }
+            
+            .contact-form-left-head-wrapper{
+                display: flex;
+                flex-direction: column;
+                /* gap: 10px; */
+            }
+            
+            .contact-form-left-head-wrapper p:first-child{
+                font-size: var(--font-size-large);
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .contact-form-left-head-wrapper p:nth-child(2){
+                font-size: var(--font-size-medium);
+                color: var(--INACTIVE_GREY);
+            }
+            
+            .contact-form-left-content{
+                display: flex;
+                flex-direction: column;
+                gap: 20px
+            }
+            
+            .contact-form-left-content-item-wrapper{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .contact-form-left-content-item{
+                display: flex;
+                width: 3em;
+                height: 3em;
+                background-color: var(--PRIMARY_COLOR);
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            
+            .contact-form-left-content-item i{
+                font-size: 1.5em;
+                color: var(--DEFAULT_WHITE);
+            }
+            
+            .contact-form-left-content-item-wrapper p{
+                font-size: var(--font-size-medium);
+                width: 80%;
+                font-weight: bold;
+                color: var(--PRIMARY_COLOR);
+            }
+            
+            
+            .contact-form-right{
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                /* border: 1px solid var(--LIGHT_GREY2); */
+                padding: 40px var(--padding-small);
+                border-radius: var(--border-radius-large);
+                background: transparent;
+                border: 1px solid var(--LIGHT_GREY2);
+                transition: all 0.9s ease;
+            }
+            
+            .contact-form-right:hover{
+                box-shadow: 0 4px 30px rgba(73, 73, 73, 0.2);
+            }
+            
+            .contact-form-textarea,
+            .contact-form-input{
+                width: 90%;
+                border: none;
+                outline: none;
+                padding: var(--padding-large) var(--padding-xlarge);
+                border-radius: var(--border-radius-large);
+                font-size: var(--font-size-medium);
+                border: 2px solid var(--DEFAULT_WHITE);
+            }
+            
+            .contact-form-textarea:focus,
+            .contact-form-input:focus {
+                border: 2px solid var(--LIGHT_GREY2);
+            }
+            
+            
+            .contact-form-input::placeholder,
+            .contact-form-textarea::placeholder {
+                color: var(--INACTIVE_GREY);
+                font-size: var(--font-size-medium);
+            }
+            
+            .contact-form-textarea {
+                height: 150px; 
+                resize: none;
+                scrollbar-width: none;
+            }
+            
+            .contact-form-button{
+                width: 90%;
+                border: none;
+                padding: var(--padding-large) var(--padding-xlarge);
+                border-radius: var(--border-radius-large);
+                font-size: var(--font-size-medium);
+                font-weight: bold;
+                background-color: var(--PRIMARY_COLOR);
+                color: var(--DEFAULT_WHITE);
+                cursor: pointer;
+                transition: ease-in-out 0.3s;
+            }
+            
+            .contact-form-button:hover{
+                background-color: #060658;
+            }
+            
+            .contact-form-button:active{
+                transform: scale(0.98);
+            }
