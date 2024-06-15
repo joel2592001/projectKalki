@@ -37,31 +37,63 @@ products.forEach(product => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.querySelector(".section-one-right");
-  const prevButton = document.querySelector(".section-one-bottom-prev");
-  const nextButton = document.querySelector(".section-one-bottom-next");
-  const totalItems = document.querySelectorAll(".section-one-right-img-card").length;
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.card-wrapper');
+  const cards = document.querySelectorAll('.review-card');
+  const dots = document.querySelectorAll('.dot');
+  const totalCards = cards.length;
   let currentIndex = 0;
+  let intervalId;
 
-  function updateCarousel() {
-      const transformValue = -currentIndex * 100;
-      carousel.style.transform = `translateX(${transformValue}%)`;
+  // Cloning cards for infinite loop effect
+  for (let i = 0; i < totalCards; i++) {
+    const clone = cards[i].cloneNode(true);
+    wrapper.appendChild(clone);
   }
 
-  prevButton.addEventListener("click", function () {
-      if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
+  function updateDots(index) {
+    console.log(index)
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index % totalCards);
+    });
+  }
+
+  function startCarousel() {
+    intervalId = setInterval(() => {
+      
+      currentIndex++;
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`; // Adjusted translateX value
+      updateDots(currentIndex);
+
+      // Reset the index and the transformation to create an infinite loop effect
+      if (currentIndex >= totalCards) {
+        setTimeout(() => {
+          wrapper.style.transition = 'none';
+          wrapper.style.transform = 'translateX(0)';
+          currentIndex = 0;
+          updateDots(currentIndex);
+          setTimeout(() => {
+            wrapper.style.transition = 'transform 0.5s ease';
+          }, 50); // Small delay to ensure the transition is applied
+        }, 500); // Match this delay with the transition duration
       }
+    }, 2000); // Adjust the interval for how long each card stays in view
+  }
+
+  // Start the carousel initially
+  startCarousel();
+
+  // Pause carousel on hover
+  wrapper.addEventListener('mouseenter', () => {
+    clearInterval(intervalId);
   });
 
-  nextButton.addEventListener("click", function () {
-      if (currentIndex < totalItems - 1) {
-          currentIndex++;
-          updateCarousel();
-      }
+  // Resume carousel on mouse leave
+  wrapper.addEventListener('mouseleave', () => {
+    startCarousel();
   });
 });
+
+
 
   
