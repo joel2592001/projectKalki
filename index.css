@@ -1005,12 +1005,14 @@ p {
 .contact-form-title {
     width: 95%;
     text-align: center;
+
 }
 
 .contact-form-title-content {
     font-size: var(--font-size-main-title);
     font-weight: bold;
 }
+
 
 .contact-form-title p:nth-child(2) {
     font-size: var(--font-size-large);
@@ -1407,7 +1409,7 @@ p {
     }
 
 
-    /* --------------------corousel----------------------- */
+    /* --------------------carousel----------------------- */
     .carousel-wrapper {
         flex-direction: column;
         padding: 40px 0px;
@@ -1487,6 +1489,11 @@ p {
     /* ----------------------parallex------------------------ */
     .parallax-content p:nth-child(1) {
         font-size: var(--font-size-large);
+    }
+
+    /* -------------------carousel----------------------- */
+    .carousel-wrapper {
+        gap: 20px;
     }
 
     /* -------------------contact----------------------- */
@@ -1592,6 +1599,39 @@ p {
     .parallax-content p:nth-child(2) {
         font-size: var(--font-size-small);
         width: 90%;
+    }
+
+    /* -------------------carousel----------------------- */
+    .carousel-wrapper {
+        width: 95%;
+        padding: var(--padding-large) 0px;
+        gap: 10px;
+    }
+
+    .carousel-left{
+        width: 85%;
+        gap: 15px;
+    }
+
+    .carousel-left p:nth-child(2){
+        font-size: var(--font-size-small);
+        word-spacing: normal;
+        line-height: 1.3rem;
+    }
+
+    .carousel-left p:nth-child(1){
+        font-size: var(--font-size-medium);
+    }
+
+    .chevron-down, .chevron-up {
+        width: 20px;
+        height: 20px;
+        border-right: 4px solid black;
+        border-bottom: 4px solid black;
+    }
+
+    .carousel-right-image-wrapper{
+        height: fit-content;
     }
 
     /* -------------------customer review----------------------- */
