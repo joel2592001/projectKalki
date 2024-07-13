@@ -15,15 +15,49 @@ const products = [
 ];
 
 
-function modalOpenClose() {
-    const navModal = document.getElementById("nav-modal");
-    console.log(navModal.style.display,'navModal');
-    if (navModal.style.display === "none" || navModal.style.display === "") {
+function modalOpenClose(event) {
+  event.stopPropagation();
+  const navModal = document.getElementById("nav-modal");
+  if (navModal.style.display === "none" || navModal.style.display === "") {
       navModal.style.display = "block";
-    } else {
+  } else {
       navModal.style.display = "none";
-    }
   }
+}
+
+function scrollToSection(event) {
+  event.preventDefault();
+  const targetId = event.currentTarget.getAttribute('href');
+  document.querySelector(targetId).scrollIntoView({
+      behavior: 'smooth'
+  });
+  const navModal = document.getElementById("nav-modal");
+  navModal.style.display = "none"; // Close the modal after clicking a link
+}
+
+document.querySelectorAll('.header-content-container a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+window.addEventListener('resize', function() {
+  const navModal = document.getElementById("nav-modal");
+  if (window.innerWidth >= 768) {
+      navModal.style.display = "none";
+  }
+});
+
+// Close modal on initial load if window width is greater than or equal to 768px
+document.addEventListener('DOMContentLoaded', function() {
+  const navModal = document.getElementById("nav-modal");
+  if (window.innerWidth >= 768) {
+      navModal.style.display = "none";
+  }
+});
 
 
 // Get the container element
@@ -31,12 +65,12 @@ const container = document.querySelector('.section-first-right-content-body');
 
 // Loop through the array and append each item to the container
 products.forEach(product => {
-    const p = document.createElement('p');
-    p.textContent = product;
-    container.appendChild(p);
+  const p = document.createElement('p');
+  p.textContent = product;
+  container.appendChild(p);
 });
 
-
+//  Start the carousel
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.card-wrapper');
   const cards = document.querySelectorAll('.review-card');
@@ -60,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startCarousel() {
     intervalId = setInterval(() => {
-      
+
       currentIndex++;
       wrapper.style.transform = `translateX(-${currentIndex * 100}%)`; // Adjusted translateX value
       updateDots(currentIndex);
@@ -95,5 +129,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const text1_options = [
+  "Sintaz Water Tank - Superior Storage Solution",
+  "Aspecta Sheet - High-Performance Cool Roofing Sheet",
+  "Premium PVC Pipe for Electrical Insulation and Water Supply",
+];
 
-  
+const text2_options = [
+  "High-grade water tank designed for durability and hygiene. Available in various capacities, perfect for residential, commercial, and industrial use. Ensures safe and clean water storage.",
+  "Innovative cool roofing sheet designed to reduce heat absorption. Provides excellent durability and energy efficiency. Ideal for residential, commercial, and industrial roofing solutions.",
+  "Durable and reliable PVC pipes available in sizes 10 mm to 100 mm. Ideal for high-pressure water supply and electrical insulation. Corrosion-resistant and long-lasting for various applications.",
+];
+
+const image_options = [
+  "./assets/product_2.png",
+  "./assets/product_3.png",
+  "./assets/product_1.png",
+];
+
+const background_colors = [
+  "rgb(255, 214, 221)", 
+  "#d3ffd3", // Light green
+  "#cce5ff", // Light blue
+];
+
+let currentIndex = 2;
+
+function changeContent(direction) {
+  if (direction === 'up') {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : text1_options.length - 1;
+  } else if (direction === 'down') {
+      currentIndex = (currentIndex < text1_options.length - 1) ? currentIndex + 1 : 0;
+  }
+
+  document.getElementById('text1').innerText = text1_options[currentIndex];
+  document.getElementById('text2').innerText = text2_options[currentIndex];
+  document.getElementById('carousel-image').src = image_options[currentIndex];
+  document.getElementById('carousel-wrapper').style.backgroundColor = background_colors[currentIndex];
+  document.getElementById('chevron-up').style.backgroundColor = background_colors[currentIndex];
+  document.getElementById('chevron-down').style.backgroundColor = background_colors[currentIndex];
+}
+

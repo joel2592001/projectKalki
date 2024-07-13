@@ -16,54 +16,47 @@
         <!-- header -->
 
         <div class="header-main">
-            <!-- <div class="header-logo-main"> -->
             <div class="header-logo-container">
                 <img src="./assets/logo_w.png" alt="" class="header-logo-img">
                 <p class="header-logo">KALKI PIPES</p>
             </div>
-            <!-- </div> -->
-
-            <i class="bi bi-list header-list" onclick="modalOpenClose()"></i>
-
+    
+            <i class="bi bi-list header-list" onclick="modalOpenClose(event)"></i>
+    
             <div class="header-content-container">
-                <p class="header-content">Home</p>
-                <p class="header-content">About</p>
-                <p class="header-content">Services</p>
-                <p class="header-content">Contact</p>
+                <a href="#home" class="header-content">Home</a>
+                <a href="#about" class="header-content">About</a>
+                <a href="#services" class="header-content">Services</a>
+                <a href="#contact" class="header-content">Contact</a>
             </div>
         </div>
 
         <!-- navigation modal -->
 
-        <div class="nav-modal" id="nav-modal" onclick="modalOpenClose()">
-            <div class="nav-modal-container">
-
+        <div class="nav-modal" id="nav-modal" onclick="modalOpenClose(event)">
+            <div class="nav-modal-container" onclick="event.stopPropagation()">
                 <div class="nav-modal-content open">
-
                     <div class="nav-modal-line">
-                        <i class="bi bi-buildings nav-modal-header-logo"></i>
-                        <p class="nav-modal-header-logo">KALKI</p>
+                        <img src="./assets/logo_b.png" alt="" class="header-logo-img">
+                        <p class="nav-modal-header-logo">KALKI PIPES</p>
                     </div>
-
+    
                     <div>
-                        <span class="nav-modal-item">Home<i class="bi bi-arrow-right"></i></span>
-                        <span class="nav-modal-item">About <i class="bi bi-arrow-right"></i></span>
-                        <span class="nav-modal-item">Services <i class="bi bi-arrow-right"></i></span>
-                        <span class="nav-modal-item">Contact <i class="bi bi-arrow-right"></i></span>
+                        <a href="#home" class="nav-modal-item" onclick="scrollToSection(event)">Home <i class="bi bi-arrow-right"></i></a>
+                        <a href="#about" class="nav-modal-item" onclick="scrollToSection(event)">About <i class="bi bi-arrow-right"></i></a>
+                        <a href="#services" class="nav-modal-item" onclick="scrollToSection(event)">Services <i class="bi bi-arrow-right"></i></a>
+                        <a href="#contact" class="nav-modal-item" onclick="scrollToSection(event)">Contact <i class="bi bi-arrow-right"></i></a>
                     </div>
-
                 </div>
-                <!-- <p class="nav-modal-close">x</p> -->
-                <i class="bi bi-x nav-modal-close" id="nav-modal-close"></i>
+                <i class="bi bi-x nav-modal-close" id="nav-modal-close" onclick="modalOpenClose(event)"></i>
             </div>
-
         </div>
 
         <!-- main content -->
         <div class="main-content">
 
             <!-- section one -->
-            <div class="section-one">
+            <div id="home" class="section-one">
                 <div class="section-one-title">
                     <p class="section-title">Welcome to KALKI PIPES</p>
                 </div>
@@ -117,7 +110,6 @@
 
             </div>
 
-
             <!-- section first -->
             <div class="section-first">
                 <div class="section-first-header">
@@ -160,16 +152,94 @@
 
             </div>
 
+            <!-- products -->
+            <!-- <div class="products-main">
+
+                <div class="products-title">
+                    <p class="section-title">Our Products</p>
+                </div>
+                <div class="products-main-wrapper">
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="./assets/product_1.png" class="product-image"/> 
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="product-content-wrapper">
+                            <p>PVC Pipe's & Bends</p>
+                            <p>Premium PVC Pipe for Electrical Insulation and Water Supply</p>
+                        </div>
+                        <button class="product-view-button">
+                            VIEW PRODUCT
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="./assets/product_.png" class="product-image"/> 
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="product-content-wrapper">
+                            <p>Water Tank</p>
+                            <p>High-grade, hygienic water tank for reliable residential and commercial storage.</p>
+                        </div>
+                        <button class="product-view-button">
+                            VIEW PRODUCT
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="./assets/product_1.png" class="product-image"/> 
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="product-content-wrapper">
+                            <p>PVC Pipe's & Bends</p>
+                            <p>Premium PVC Pipe for Electrical Insulation and Water Supply</p>
+                        </div>
+                        <button class="product-view-button">
+                            VIEW PRODUCT
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- carousel -->
+            <div class="carousel-container">
+
+                <div class="carousel-wrapper" id="carousel-wrapper">
+                    <div class="carousel-left">
+                        <p id="text1">Premium PVC Pipe for Electrical Insulation and Water Supply</p>
+                        <p id="text2">Durable and reliable PVC pipes available in sizes 10 mm to 100 mm. Ideal for
+                            high-pressure
+                            water supply and electrical insulation. Corrosion-resistant and long-lasting for various
+                            applications.</p>
+                    </div>
+                    <div class="carousel-right">
+                        <div class="carousel-right-image-wrapper">
+                            <img src="./assets/product_1.png" class="carousel-product-image" id="carousel-image" />
+                        </div>
+                        <div class="carousel-switch-button-wrapper">
+                            <div class="chevron-up" id="chevron-up" onclick="changeContent('up')"></div>
+                            <div class="chevron-down" id="chevron-down" onclick="changeContent('down')"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- parallax -->
             <div class="parallax">
-                <!-- <div class="parallax-content">
+                <div class="parallax-content">
                     <p>Ready to Experience Quality PVC Pipes?</p>
-                    <p>Contact KALKI PIPES today and discover why our customers trust us for their PVC pipe needs. Whether you're looking for reliable electrical insulation solutions or robust water supply pipes, we're here to help. Reach out to our knowledgeable team to discuss your requirements, request a quote, or place an order. Experience the difference with KALKI PIPES – where quality meets reliability.</p>
-                </div> -->
+                    <p>Contact KALKI PIPES today and discover why our customers trust us for their PVC pipe needs.
+                        Whether you're looking for reliable electrical insulation solutions or robust water supply
+                        pipes, we're here to help.</p>
+                </div>
             </div>
 
             <!-- Customer Review -->
-            <div class="customer-review-main">
+            <div id="review" class="customer-review-main">
 
                 <!-- <div class="contact-form-title">
                     <p class="contact-form-title-content">Customer Review</p>
@@ -343,7 +413,7 @@
             </div>
 
             <!-- contact form -->
-            <div class="contact-form-main">
+            <div id="contact" class="contact-form-main">
                 <div class="contact-form-title">
                     <p class="contact-form-title-content">HAVE ANY QUESTION?</p>
                     <p>Ready to find out more about our products or place an order? Get in touch with us today!</p>
@@ -424,8 +494,8 @@
 
         <!-- footer -->
         <div class="footer-main">
-            <p class="footer-logo">KALKI.COM</p>
-            <div class="footer-content-main">
+            <p class="footer-logo">KALKIPIPES.COM</p>
+            <!-- <div class="footer-content-main">
                 <span>Home</span>
                 <span>About</span>
                 <span>Services</span>
@@ -442,9 +512,10 @@
                 <span onclick="window.location.href='https://wa.me/7092824762';">
                     <i class="bi bi-whatsapp"></i>
                 </span>
-            </div>
+            </div> -->
 
-            <p class="footer-copyright">Copyright ©2024 All rights reserved | This template is made with by kalki.com
+            <p class="footer-copyright">Copyright ©2024 All rights reserved | This template is made with by
+                kalkipipes.com
             </p>
 
         </div>
