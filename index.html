@@ -20,13 +20,13 @@
                 <img src="./assets/logo_w.png" alt="" class="header-logo-img">
                 <p class="header-logo">KALKI PIPES</p>
             </div>
-    
+
             <i class="bi bi-list header-list" onclick="modalOpenClose(event)"></i>
-    
+
             <div class="header-content-container">
                 <a href="#home" class="header-content">Home</a>
-                <a href="#about" class="header-content">About</a>
-                <a href="#services" class="header-content">Services</a>
+                <a href="#product" class="header-content">Products</a>
+                <a href="#review" class="header-content">Review</a>
                 <a href="#contact" class="header-content">Contact</a>
             </div>
         </div>
@@ -40,17 +40,38 @@
                         <img src="./assets/logo_b.png" alt="" class="header-logo-img">
                         <p class="nav-modal-header-logo">KALKI PIPES</p>
                     </div>
-    
+
                     <div>
-                        <a href="#home" class="nav-modal-item" onclick="scrollToSection(event)">Home <i class="bi bi-arrow-right"></i></a>
-                        <a href="#about" class="nav-modal-item" onclick="scrollToSection(event)">About <i class="bi bi-arrow-right"></i></a>
-                        <a href="#services" class="nav-modal-item" onclick="scrollToSection(event)">Services <i class="bi bi-arrow-right"></i></a>
-                        <a href="#contact" class="nav-modal-item" onclick="scrollToSection(event)">Contact <i class="bi bi-arrow-right"></i></a>
+                        <a href="#home" class="nav-modal-item" onclick="scrollToSection(event)">Home <i
+                                class="bi bi-arrow-right"></i></a>
+                        <a href="#product" class="nav-modal-item" onclick="scrollToSection(event)">Products<i
+                                class="bi bi-arrow-right"></i></a>
+                        <a href="#review" class="nav-modal-item" onclick="scrollToSection(event)">Review <i
+                                class="bi bi-arrow-right"></i></a>
+                        <a href="#contact" class="nav-modal-item" onclick="scrollToSection(event)">Contact <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 <i class="bi bi-x nav-modal-close" id="nav-modal-close" onclick="modalOpenClose(event)"></i>
             </div>
         </div>
+
+        <!-- main carousel -->
+        <div class="main-carousel">
+            <div class="main-carousel-wrapper">
+                <div class="main-carousel-container">
+                    <p class="main-carousel-title">Unmatched Quality</p>
+                    <h1 class="main-carousel-body">Experience superior durability and performance with KALKI PIPES advanced manufacturing.</h1>
+                </div>
+
+                <div class="main-carousel-dots-container">
+                    <span class="main-carousel-dot active"></span>
+                    <span class="main-carousel-dot"></span>
+                    <span class="main-carousel-dot"></span>
+                </div>
+            </div>
+        </div>
+
 
         <!-- main content -->
         <div class="main-content">
@@ -205,7 +226,7 @@
             </div> -->
 
             <!-- carousel -->
-            <div class="carousel-container">
+            <div id="product" class="carousel-container">
                 <div class="contact-form-title">
                     <p class="contact-form-title-content">Our Products</p>
                     <p>Explore our high-quality, durable solutions for PVC pipes and cool roofing needs.</p>

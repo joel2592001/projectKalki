@@ -60,6 +60,69 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.main-carousel');
+  const dots = document.querySelectorAll('.main-carousel-dot');
+  const captions = document.querySelector('.main-carousel-title');
+  const headings = document.querySelector('.main-carousel-body');
+  
+  const slides = [
+      {
+          image: 'url(./assets/pipe_1.jpg)',
+          caption: 'Unmatched Quality',
+          heading: 'Experience superior durability and performance with KALKI PIPES advanced manufacturing.'
+      },
+      {
+          image: 'url(./assets/pipe_4.jpg)',
+          caption: 'Innovative Design',
+          heading: 'Discover the advanced technology behind our superior PVC pipes.'
+      },
+      {
+          image: 'url(./assets/pipe_5.jpg)',
+          caption: 'Reliable Performance',
+          heading: 'Trust in KALKI PIPES for long-lasting and efficient solutions.'
+      }
+  ];
+
+  let currentIndex = 0;
+
+  function changeSlide() {
+      const slide = slides[currentIndex];
+      
+      carousel.style.backgroundImage = slide.image;
+      
+      // Transition content out
+      captions.style.opacity = 0;
+      headings.style.opacity = 0;
+
+      // After the transition ends, change the content and transition it back in
+      setTimeout(() => {
+          captions.textContent = slide.caption;
+          headings.textContent = slide.heading;
+          captions.style.opacity = 1;
+          headings.style.opacity = 1;
+      }, 500); // Match the CSS transition duration
+      
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+      
+      currentIndex = (currentIndex + 1) % slides.length;
+  }
+
+  setInterval(changeSlide, 3000); // Change slide every 3 seconds
+
+  dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+          currentIndex = index;
+          changeSlide();
+      });
+  });
+
+  // Initial call to set the first slide
+  changeSlide();
+});
+
+
 // Get the container element
 const container = document.querySelector('.section-first-right-content-body');
 
@@ -71,7 +134,7 @@ products.forEach(product => {
 });
 
 //  Start the carousel
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {     
   const wrapper = document.querySelector('.card-wrapper');
   const cards = document.querySelectorAll('.review-card');
   const dots = document.querySelectorAll('.dot');
