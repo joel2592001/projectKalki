@@ -193,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const text1_options = [
-  "Sintaz Water Tank - Superior Storage Solution",
-  "Aspecta Sheet - High-Performance Cool Roofing Sheet",
-  "Premium PVC Pipe for Electrical Insulation and Water Supply",
+  "Sintaz Water Tank ",
+  "Aspecta Sheet ",
+  "Premium PVC Pipe for Water Supply",
 ];
 
 const text2_options = [
