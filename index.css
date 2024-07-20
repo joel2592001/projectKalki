@@ -1128,19 +1128,46 @@ p {
 
 /* ---------------------------faq----------------------------- */
 
+
+
 .faq-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: var(--padding-xlarge);
+}
+
+.faq-main {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* padding: var(--padding-xlarge); */
+    align-items: center;
+}
+
+.faq-img-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35rem;
+    /* background-color: #000; */
+}
+
+.faq-img {
+    width: 95%;
+    object-fit: contain;
 }
 
 .faq-wrapper {
-    width: 70%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* background-color: #000; */
     /* color: var(--LIGHT_GREY); */
 
 }
@@ -1149,30 +1176,31 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: var(--padding-xlarge);
+    padding: var(--padding-small);
     box-shadow: var(--box-shadow-large);
     border-radius: var(--border-radius-medium);
     cursor: pointer;
     transition: all 0.5s ease;
-    border: 2px solid var(--LIGHT_GREY);
-}
-
-.faq-head-wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
 }
 
+.faq-head-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; 
+}
+
 .faq-head-question {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
     font-weight: bold;
+    margin-left: var(--margin-medium);
+    color: var(--DARK_THREE);
 }
 
 .faq-body {
     font-size: var(--font-size-medium);
-    margin-top: var(--margin-large);
+    margin: var(--margin-medium);
     color: var(--INACTIVE_GREY);
     transition: all 0.5s ease;
     max-height: 0;
@@ -1183,13 +1211,10 @@ p {
 }
 
 .faq-arrow {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    right: 0;
-    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    transform: rotate(180deg); 
     transition: transform 0.3s ease;
-    transform: rotate(180deg);
     color: #ffd700;
     filter: brightness(0) saturate(100%) invert(72%) sepia(88%) saturate(722%) hue-rotate(356deg) brightness(104%) contrast(109%);
 
@@ -1197,14 +1222,13 @@ p {
 
 .faq-head.active .faq-body {
     max-height: 500px;
-    /* adjust as necessary */
     opacity: 1;
     display: block;
 }
 
 
 .faq-head.active .faq-arrow {
-    transform: rotate(0deg);
+    transform: translateY(-50%) rotate(0deg); 
 }
 
 
@@ -1567,6 +1591,21 @@ p {
 
     }
 
+    /* ---------------------------faq------------------------- */
+    .faq-main{
+        flex-direction: column;
+    }
+
+    .faq-img-container{
+        width: 80%;
+        /* background-color: #000; */
+        height: fit-content;
+    }
+
+    .faq-wrapper{
+        width: 80%;
+    }
+
     /* -------------------------productcard--------------------------- */
     .products-main-wrapper {
         /* overflow-x: scroll; */
@@ -1629,6 +1668,10 @@ p {
     }
 
     /* -------------------------------faq----------------------------------- */
+
+    .faq-img-container{
+        width: 90%;
+    }
     .faq-wrapper{
         width: 90%;
     }
@@ -1758,22 +1801,12 @@ p {
 
     /* -------------------faq----------------------- */
 
-    .faq-head{
-        padding: var(--padding-large);
-    }
     .faq-wrapper{
-        gap: 25px;
-        width: 95%;
+        width: 100%;
     }
 
-    .faq-head-question{
-        font-size: var(--font-size-medium);
-    }
-
-    .faq-arrow{
-        width: 45px;
-        height: 45px;
-        bottom:  15px;
+    .faq-body{
+        margin-top: 0px;
     }
 
     /* ----------------------parallex------------------------ */
@@ -1972,16 +2005,15 @@ p {
     }
 
     /* -------------------faq----------------------- */
+    .faq-container{
+        padding: var(--padding-small);
+    }
     .faq-wrapper{
         gap: 15px;
     }
+
     .faq-head-question{
         font-size: var(--font-size-small);
-    }
-
-    .faq-arrow {
-        width: 35px;
-        height: 35px;
     }
 
     .faq-body{
